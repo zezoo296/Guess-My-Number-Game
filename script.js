@@ -20,9 +20,14 @@ document.querySelector('.check').addEventListener('click',function()
             {
                 if(score > 1)
                 {
-                    document.querySelector('.message').textContent = guess > correctNumber ? 'Too High!' :'Too Low!';
-                    score--;
-                    document.querySelector('.score').textContent = score;  
+                    if(guess > 20 || guess < 0)
+                        document.querySelector('.message').textContent = 'Out of range!';
+                    else
+                    {
+                        document.querySelector('.message').textContent = guess > correctNumber ? 'Too High!' :'Too Low!';
+                        score--;
+                        document.querySelector('.score').textContent = score;                          
+                    }
                 }
                 else
                 {
